@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Second unofficial COMM 190 probability practice test: 16 new questions, 22 marks, 50-minute timer, with worked solutions for every missed question.">
+<meta property="og:title" content="COMM 190 Quiz 4 Mock Test B">
+<meta property="og:description" content="Second unofficial COMM 190 probability practice test: 16 new questions, 22 marks, 50-minute timer, with worked solutions for every missed question.">
+<style>:root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); } body { margin: 0; } img { max-width: 100%; } [hidden] { display: none !important; }</style>
+<title>COMM 190 Mock Test B</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap">
+<style>
+/* Layout concept: an exam answer sheet. Number and marks sit in the left margin, the question reads in the middle, the answer box sits in a right-hand column. */
+:root {
+  --bg: #fcfcfd; --surface: #f9f9fb; --chip: #f0f0f3; --line: #d9d9e0; --border: #cdced6; --focus: #8da4ef;
+  --muted: #60646c; --fg: #1c2024;
+  --accent: #3e63dd; --accent-hover: #3358d4; --accent-text: #3a5bc7; --accent-bg: #edf2fe; --on-accent: #fdfdfe;
+  --ok: #2a7e3b; --ok-bg: #e9f6e9; --ok-line: #94ce9a;
+  --bad: #d13415; --bad-bg: #feebe7; --bad-line: #f5a898;
+  --warn: #ab6400; --warn-bg: #fff7c2; --warn-line: #e9c162;
+  --serif: "Source Serif 4", Georgia, serif;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111113; --surface: #18191b; --chip: #212225; --line: #363a3f; --border: #43484e; --focus: #435db1;
+  --muted: #b0b4ba; --fg: #edeef0;
+  --accent: #3e63dd; --accent-hover: #5472e4; --accent-text: #9eb1ff; --accent-bg: #182449;
+  --ok: #71d083; --ok-bg: #1b2a1e; --ok-line: #366740;
+  --bad: #ff977d; --bad-bg: #391714; --bad-line: #853a2d;
+  --warn: #ffca16; --warn-bg: #302008; --warn-line: #714f19;
+  color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bg: #111113; --surface: #18191b; --chip: #212225; --line: #363a3f; --border: #43484e; --focus: #435db1;
+  --muted: #b0b4ba; --fg: #edeef0;
+  --accent: #3e63dd; --accent-hover: #5472e4; --accent-text: #9eb1ff; --accent-bg: #182449;
+  --ok: #71d083; --ok-bg: #1b2a1e; --ok-line: #366740;
+  --bad: #ff977d; --bad-bg: #391714; --bad-line: #853a2d;
+  --warn: #ffca16; --warn-bg: #302008; --warn-line: #714f19;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 400 15px/1.65 var(--sans); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+.wrap { max-width: 860px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header.top { padding-block: 32px 22px; display: grid; gap: 12px; }
+.eyebrow { font: 600 12px/1.4 var(--mono); letter-spacing: .06em; color: var(--accent-text); }
+h1 { margin: 0; font: 700 clamp(26px, 5vw, 36px)/1.2 var(--serif); text-wrap: balance; }
+.spec { display: flex; flex-wrap: wrap; gap: 6px 8px; margin: 0; padding: 0; list-style: none; }
+.spec li { background: var(--chip); border-radius: 4px; padding: 2px 9px; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+.rules { margin: 0; color: var(--muted); max-width: 68ch; font-size: 14px; }
+.rules a { color: var(--accent-text); }
+.rules strong { color: var(--fg); font-weight: 500; }
+
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-block: 1px solid var(--line); }
+.bar-in { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding-block: 9px; }
+.clock { font: 600 21px/1 var(--mono); font-variant-numeric: tabular-nums; min-width: 4.2ch; }
+.clock.low { color: var(--bad); }
+.count { color: var(--muted); font-size: 13.5px; font-variant-numeric: tabular-nums; }
+.spacer { flex: 1 1 auto; }
+button { font: 500 14px/1 var(--sans); border-radius: 5px; padding: 9px 14px; cursor: pointer; border: 1px solid var(--border); background: var(--bg); color: var(--fg); }
+button:hover { border-color: var(--focus); }
+button.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+button.primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.confirm { border-top: 1px solid var(--line); background: var(--warn-bg); }
+.confirm-in { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding-block: 9px; font-size: 14px; }
+
+.results:focus { outline: none; }
+.results { padding-block: 24px; border-bottom: 1px solid var(--line); display: grid; gap: 16px; }
+.score { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+.score b { font: 700 44px/1 var(--serif); font-variant-numeric: tabular-nums; }
+.score span { color: var(--muted); }
+.res-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px 32px; }
+.res-grid > div { min-width: 0; }
+.res-grid h2, .ref h2 { margin: 0 0 6px; font: 600 16px/1.4 var(--serif); }
+table.topics { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+table.topics td { padding: 5px 0; border-top: 1px solid var(--line); }
+table.topics td:last-child { text-align: right; font-family: var(--mono); white-space: nowrap; }
+.jump { display: flex; flex-wrap: wrap; gap: 6px; }
+.jump button { padding: 6px 10px; font: 600 13px/1 var(--mono); color: var(--bad); border-color: var(--bad-line); background: var(--bad-bg); }
+.ref ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; font: 400 13.5px/1.55 var(--mono); }
+.ref li { overflow-wrap: anywhere; }
+
+ol.paper { list-style: none; margin: 0; padding: 0; }
+.q { display: grid; grid-template-columns: 3.4rem minmax(0, 1fr) 10.5rem; gap: 6px 16px; padding-block: 20px; border-bottom: 1px solid var(--line); scroll-margin-top: 70px; }
+.mark { font-variant-numeric: tabular-nums; }
+.mark b { display: block; font: 700 21px/1.1 var(--serif); }
+.mark small { color: var(--muted); font-size: 12.5px; white-space: nowrap; }
+.stem { margin: 0; font: 400 17px/1.55 var(--serif); max-width: 62ch; }
+.body { display: grid; gap: 10px; min-width: 0; }
+.sheet-wrap { overflow-x: auto; }
+table.sheet { border-collapse: collapse; font: 400 13.5px/1.4 var(--mono); }
+table.sheet th, table.sheet td { border: 1px solid var(--border); padding: 4px 9px; text-align: left; white-space: nowrap; }
+table.sheet th { background: var(--chip); font-weight: 600; color: var(--muted); text-align: center; }
+.ans { display: grid; gap: 5px; align-content: start; }
+.ans label.lab { font-size: 12.5px; color: var(--muted); }
+.ans input[type="text"] { width: 100%; font: 600 16px/1.2 var(--mono); padding: 8px 9px; background: var(--bg); color: var(--fg); border: 1px solid var(--border); border-radius: 4px; font-variant-numeric: tabular-nums; }
+.ans input:disabled { opacity: 1; background: var(--chip); }
+.hint { font-size: 12.5px; color: var(--warn); }
+fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 4px; }
+fieldset legend { font-size: 12.5px; color: var(--muted); padding: 0; margin-bottom: 3px; }
+.tf { display: flex; align-items: center; gap: 7px; font-size: 15px; cursor: pointer; }
+.tf input { accent-color: var(--accent); width: 16px; height: 16px; margin: 0; }
+
+.pill { display: inline-block; width: fit-content; padding: 2px 9px; border-radius: 4px; border: 1px solid; font-size: 13px; font-weight: 500; }
+.pill.ok { color: var(--ok); background: var(--ok-bg); border-color: var(--ok-line); }
+.pill.bad { color: var(--bad); background: var(--bad-bg); border-color: var(--bad-line); }
+.pill.none { color: var(--warn); background: var(--warn-bg); border-color: var(--warn-line); }
+.key { font: 600 14px/1.4 var(--mono); }
+.sol { grid-column: 2 / -1; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 10px 14px; min-width: 0; margin-top: 6px; }
+.sol.missed { border-color: var(--bad-line); }
+.sol summary { cursor: pointer; font-size: 14px; font-weight: 500; color: var(--accent-text); }
+.sol.missed summary { color: var(--bad); }
+.sol-body { display: grid; gap: 8px; padding-top: 10px; min-width: 0; }
+.sol .compare { margin: 0; font-size: 14.5px; font-weight: 500; font-variant-numeric: tabular-nums; }
+button.filter { margin-top: 10px; padding: 7px 11px; font-size: 13px; }
+.only-missed .q.is-right { display: none; }
+.sol .tag { font: 600 12px/1.4 var(--mono); color: var(--accent-text); }
+.sol ol { margin: 0; padding-left: 1.25em; display: grid; gap: 3px; font-size: 14.5px; font-variant-numeric: tabular-nums; }
+.sol .trap { margin: 0; font-size: 14px; }
+.sol .trap b { color: var(--warn); font-weight: 500; }
+.tree-wrap { overflow-x: auto; }
+svg.tree { display: block; width: 100%; min-width: 400px; max-width: 520px; height: auto; }
+svg.tree line { stroke: var(--border); stroke-width: 1.25; }
+svg.tree text { fill: var(--fg); font: 400 12.5px var(--sans); }
+svg.tree text.p { font: 400 12px var(--mono); fill: var(--muted); paint-order: stroke; stroke: var(--surface); stroke-width: 4px; }
+svg.tree text.j { font: 400 12.5px var(--mono); }
+svg.tree text.head { font-size: 11.5px; fill: var(--muted); }
+svg.tree .hit { font-weight: 700; fill: var(--accent-text); }
+footer.foot { padding-block: 22px 40px; color: var(--muted); font-size: 13.5px; max-width: 68ch; }
+
+@media (max-width: 640px) {
+  .q { grid-template-columns: 3.4rem minmax(0, 1fr); }
+  .ans { grid-column: 2; max-width: 14rem; }
+  .sol { grid-column: 1 / -1; }
+}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">COMM 190 · MODULE 4-1 TO 4-3 · SECOND PRACTICE SET</div>
+    <h1>COMM 190 Quiz 4 Mock Test B</h1>
+    <ul class="spec">
+      <li>16 questions</li><li>22 marks</li><li>50 minutes</li><li>Probability only</li>
+    </ul>
+    <p class="rules"><strong>Rules:</strong> Round numeric answers to four decimal places. Enter <strong>999</strong> if there is not enough information. As on earlier quizzes, use only a calculator and scratch paper, with no Excel. Answers within ±0.0005 count as correct.</p>
+    <p class="rules">This is an unofficial study aid, not affiliated with UBC. The questions were written for practice and are not from the real Quiz 4. Marks per question are an estimate, and the real quiz may also cover the earlier LP modules.</p>
+    <p class="rules"><strong>Practice sets:</strong> This is Set B. <a href="./">Go to Set A</a>.</p>
+  </header>
+</div>
+
+<div class="bar">
+  <div class="wrap bar-in">
+    <span class="clock" id="clock" role="timer" aria-label="Time remaining">50:00</span>
+    <button type="button" id="start">Start 50-minute timer</button>
+    <span class="count" id="count" aria-live="polite">0 / 16 answered</span>
+    <span class="spacer"></span>
+    <button type="button" class="primary" id="submit">Submit and see answers</button>
+  </div>
+  <div class="confirm" id="confirm" hidden>
+    <div class="wrap confirm-in">
+      <span id="confirm-msg"></span>
+      <button type="button" class="primary" id="confirm-yes">Submit anyway</button>
+      <button type="button" id="confirm-no">Keep working</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="results" id="results" hidden tabindex="-1" aria-label="Your results">
+    <div class="score"><b id="score-num"></b><span id="score-note"></span></div>
+    <div class="res-grid">
+      <div>
+        <h2>Score by topic</h2>
+        <table class="topics"><tbody id="topic-rows"></tbody></table>
+      </div>
+      <div>
+        <h2>Questions to review</h2>
+        <div class="jump" id="jump"></div>
+        <button type="button" id="only-missed" class="filter" aria-pressed="false">Show only missed questions</button>
+      </div>
+    </div>
+    <div class="ref">
+      <h2>Formula sheet</h2>
+      <ul>
+        <li>P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</li>
+        <li>Independent: P(A ∩ B) = P(A)P(B), and P(A | B) = P(A)</li>
+        <li>Dependent: P(A ∩ B) ≠ P(A)P(B), and P(A | B) ≠ P(A)</li>
+        <li>Mutually exclusive: P(A ∩ B) = 0, and P(A | B) = 0</li>
+        <li>P(A | B) = P(A ∩ B) / P(B)</li>
+        <li>P(not A ∩ not B) = 1 − P(A ∪ B)</li>
+        <li>Bayes: P(A | B) = P(B | A)P(A) / [P(B | A)P(A) + P(B | not A)P(not A)]</li>
+        <li>RAND()*k is uniform on 0 to k, so P(interval) = interval length / k</li>
+      </ul>
+    </div>
+  </section>
+
+  <ol class="paper" id="paper"></ol>
+  <footer class="foot">Scope follows the course announcement that Quiz 4 covers material up to Module 4-3. Your answers stay in your own browser and are never sent anywhere.</footer>
+</div>
+
+<script type="application/json" id="quiz-data">
+[
+{"id": 1, "pts": 1, "topic": "sim", "type": "num", "answer": 0.45, "key": "0.4500", "stem": "Cells A1 and A2 contain the formulas shown. After Excel recalculates, what is the probability that A2 displays \"Q\"?", "sheet": [["A1", "=RAND()*4"], ["A2", "=IF(A1<1.2,\"P\",IF(A1<3,\"Q\",\"R\"))"]], "steps": ["A1 = RAND()*4, so A1 is uniformly distributed between 0 and 4.", "A2 displays Q when A1 is not below 1.2 and is below 3, so 1.2 ≤ A1 < 3.", "P(Q) = (3 − 1.2) / 4 = 1.8 / 4 = 0.45"], "trap": "Divide the interval length by 4, the full range of A1. Answering 1.8 ignores the scaling."},
+{"id": 2, "pts": 1, "topic": "sim", "type": "num", "answer": 0.55, "key": "0.5500", "stem": "Cells A1 and A2 contain the formulas shown. After Excel recalculates, what is the probability that A2 displays \"Y\"?", "sheet": [["A1", "=RAND()"], ["A2", "=IF(A1>0.75,\"X\",IF(A1>0.2,\"Y\",\"Z\"))"]], "steps": ["Excel only reaches the inner IF when A1 ≤ 0.75.", "Y therefore needs A1 ≤ 0.75 and A1 > 0.2.", "P(Y) = 0.75 − 0.2 = 0.55"], "trap": "The tests run from the top of the range downward here. Both tests use the same cell, so subtract instead of multiplying."},
+{"id": 3, "pts": 1, "topic": "sim", "type": "num", "answer": 0.39, "key": "0.3900", "stem": "Cells A1, B1 and C1 contain the formulas shown. After Excel recalculates, what is the probability that C1 displays \"Z\"?", "sheet": [["A1", "=RAND()"], ["B1", "=RAND()"], ["C1", "=IF(A1<0.35,\"X\",IF(B1<0.4,\"Y\",\"Z\"))"]], "steps": ["Z needs the first test to fail, so A1 ≥ 0.35. That has probability 0.65.", "Z also needs the second test to fail, so B1 ≥ 0.4. That has probability 0.6.", "A1 and B1 are independent RAND() values, so P(Z) = 0.65 × 0.6 = 0.39"], "trap": "Here the two tests use different cells, so multiplying is correct. Z is the path where both tests fail."},
+{"id": 4, "pts": 1, "topic": "rules", "type": "tf", "answer": "False", "key": "False", "stem": "If two events are dependent, then they must be mutually exclusive.", "steps": ["Dependent only means P(A ∩ B) ≠ P(A)P(B).", "Example: P(A) = 0.5, P(B) = 0.4 and P(A ∩ B) = 0.3. These are dependent because 0.3 ≠ 0.2.", "They can still happen together because P(A ∩ B) = 0.3 is above 0, so the statement is False."], "trap": "The reverse does hold. Mutually exclusive events with positive probabilities are always dependent."},
+{"id": 5, "pts": 1, "topic": "rules", "type": "tf", "answer": "True", "key": "True", "stem": "G and H are events with P(G) = 0.4, P(H) = 0.35 and P(G ∩ H) = 0.14. Then G and H are independent.", "steps": ["Compare P(G ∩ H) with P(G)P(H).", "P(G)P(H) = 0.4 × 0.35 = 0.14", "The two values match, so G and H are independent, and the statement is True."], "trap": "Events that can happen together are not automatically dependent. The only test is whether the joint probability equals the product."},
+{"id": 6, "pts": 1, "topic": "rules", "type": "num", "answer": 0.3056, "key": "0.3056", "stem": "You roll two standard six-sided dice. What is the probability that at least one die shows a 4?", "steps": ["The complement of \"at least one 4\" is \"no 4 on either die\".", "P(no 4) = (5/6)(5/6) = 25/36", "P(at least one 4) = 1 − 25/36 = 11/36 = 0.3056"], "trap": "Adding 1/6 + 1/6 = 0.3333 counts the outcome (4, 4) twice."},
+{"id": 7, "pts": 2, "topic": "rules", "type": "num", "answer": 0.6, "key": "0.6000", "stem": "A and B are independent events with P(A) = 0.4 and P(A ∪ B) = 0.76. What is P(B)?", "steps": ["Independence gives P(A ∩ B) = P(A)P(B) = 0.4 P(B).", "P(A ∪ B) = P(A) + P(B) − P(A)P(B), so 0.76 = 0.4 + P(B) − 0.4 P(B).", "0.36 = 0.6 P(B), so P(B) = 0.6", "Check: 0.4 + 0.6 − 0.24 = 0.76."], "trap": "0.76 − 0.4 = 0.36 is the answer only for mutually exclusive events. Independent events overlap, so the overlap must be subtracted."},
+{"id": 8, "pts": 1, "topic": "rules", "type": "num", "answer": 0.62, "key": "0.6200", "stem": "C and D are independent events with P(C) = 0.2 and P(D) = 0.7. What is the probability that exactly one of the two events occurs?", "steps": ["C only: 0.2 × (1 − 0.7) = 0.06", "D only: (1 − 0.2) × 0.7 = 0.56", "P(exactly one) = 0.06 + 0.56 = 0.62"], "trap": "P(C ∪ D) = 0.76 also includes both events occurring. Subtract that 0.14 to get exactly one."},
+{"id": 9, "pts": 1, "topic": "rules", "type": "num", "answer": 999, "key": "999", "stem": "S and T are two events with P(S) = 0.6 and P(T) = 0.3. What is P(S | T)?", "steps": ["P(S | T) = P(S ∩ T) / P(T).", "P(S ∩ T) is not given, and nothing says how S and T are related.", "There is not enough information, so enter 999."], "trap": "Assuming independence gives 0.6, and assuming mutual exclusivity gives 0. The question supports neither assumption."},
+{"id": 10, "pts": 1, "topic": "cond", "type": "num", "answer": 0, "key": "0.0000", "stem": "V and W are mutually exclusive events with P(V) = 0.3 and P(W) = 0.2. What is P(V | W)?", "steps": ["Mutually exclusive means P(V ∩ W) = 0.", "P(V | W) = P(V ∩ W) / P(W) = 0 / 0.2 = 0", "If W occurred, V cannot have occurred."], "trap": "Answering 0.3 treats the events as independent. Here, knowing W occurred changes the probability of V from 0.3 to 0, which is why these events are dependent."},
+{"id": 11, "pts": 1, "topic": "rules", "type": "num", "answer": 0.5, "key": "0.5000", "stem": "A bag contains 3 blue balls and 6 green balls. Two balls are drawn in sequence without replacement. What is the probability that both balls are the same colour?", "tree": {"a": [{"l": "Blue", "p": "3/9", "k": [{"l": "Blue", "p": "2/8", "j": "6/72", "hit": true}, {"l": "Green", "p": "6/8", "j": "18/72"}]}, {"l": "Green", "p": "6/9", "k": [{"l": "Blue", "p": "3/8", "j": "18/72"}, {"l": "Green", "p": "5/8", "j": "30/72", "hit": true}]}]}, "steps": ["Both blue: (3/9)(2/8) = 6/72.", "Both green: (6/9)(5/8) = 30/72.", "P(same colour) = 36/72 = 0.5"], "trap": "After the first draw, only 8 balls remain, so the second branch uses a denominator of 8."},
+{"id": 12, "pts": 2, "topic": "cond", "type": "num", "answer": 0.8333, "key": "0.8333", "stem": "A bag contains 3 blue balls and 6 green balls. Two balls are drawn in sequence without replacement. If both balls are the same colour, what is the probability that they are both green?", "tree": {"a": [{"l": "Blue", "p": "3/9", "k": [{"l": "Blue", "p": "2/8", "j": "6/72"}, {"l": "Green", "p": "6/8", "j": "18/72"}]}, {"l": "Green", "p": "6/9", "k": [{"l": "Blue", "p": "3/8", "j": "18/72"}, {"l": "Green", "p": "5/8", "j": "30/72", "hit": true}]}]}, "steps": ["The condition \"same colour\" keeps only two paths: 6/72 and 30/72.", "P(same colour) = 36/72.", "P(both green | same colour) = (30/72) / (36/72) = 30/36 = 0.8333"], "trap": "The denominator is the probability of the condition, 36/72, and not the whole tree."},
+{"id": 13, "pts": 2, "topic": "cond", "type": "num", "answer": 0.5455, "key": "0.5455", "stem": "M and N are events with P(M) = 0.45, P(N) = 0.5 and P(M ∪ N) = 0.7. What is P(not N | not M)?", "steps": ["P(not M) = 1 − 0.45 = 0.55.", "P(not M ∩ not N) = 1 − P(M ∪ N) = 1 − 0.7 = 0.3.", "P(not N | not M) = 0.3 / 0.55 = 0.5455"], "trap": "Answering 1 − 0.5 = 0.5 assumes independence. These events are dependent, because P(M ∩ N) = 0.25 and P(M)P(N) = 0.225."},
+{"id": 14, "pts": 2, "topic": "cond", "type": "num", "answer": 0.45, "key": "0.4500", "stem": "A company has 500 employees. Of these, 300 work full-time, 170 work in sales, and 80 both work full-time and work in sales. If a randomly selected employee does not work full-time, what is the probability that the employee works in sales?", "steps": ["Employees who are not full-time = 500 − 300 = 200.", "Sales employees who are not full-time = 170 − 80 = 90.", "P(sales | not full-time) = 90 / 200 = 0.45"], "trap": "Using 80 in the numerator gives the wrong group, because those 80 employees are full-time. A 2 × 2 table makes this easy to see."},
+{"id": 15, "pts": 2, "topic": "cond", "type": "num", "answer": 0.2151, "key": "0.2151", "stem": "At a bank, 1.5% of card transactions are fraudulent. A monitoring system flags 90% of fraudulent transactions and 5% of legitimate transactions. If a transaction is flagged, what is the probability that it is fraudulent?", "tree": {"a": [{"l": "Fraud", "p": "0.015", "k": [{"l": "Flag", "p": "0.90", "j": "0.0135", "hit": true}, {"l": "No flag", "p": "0.10", "j": "0.0015"}]}, {"l": "Legit", "p": "0.985", "k": [{"l": "Flag", "p": "0.05", "j": "0.04925"}, {"l": "No flag", "p": "0.95", "j": "0.93575"}]}]}, "steps": ["P(flagged) = 0.0135 + 0.04925 = 0.06275.", "P(fraud | flagged) = 0.0135 / 0.06275 = 0.2151"], "trap": "0.90 is P(flagged | fraud), which is the reverse of the question. Legitimate transactions are so common that they produce most of the flags."},
+{"id": 16, "pts": 2, "topic": "cond", "type": "num", "answer": 0.7619, "key": "0.7619", "stem": "You roll a standard six-sided die. If it shows a 1 or 2, you play Game A, which you win with probability 1/2. Otherwise, you play Game B, which you win with probability 1/5. If you lose, what is the probability that you played Game B?", "tree": {"a": [{"l": "Game A", "p": "2/6", "k": [{"l": "Win", "p": "1/2", "j": "5/30"}, {"l": "Lose", "p": "1/2", "j": "5/30"}]}, {"l": "Game B", "p": "4/6", "k": [{"l": "Win", "p": "1/5", "j": "4/30"}, {"l": "Lose", "p": "4/5", "j": "16/30", "hit": true}]}]}, "steps": ["P(lose) = 5/30 + 16/30 = 21/30.", "P(Game B and lose) = (4/6)(4/5) = 16/30.", "P(Game B | lose) = (16/30) / (21/30) = 16/21 = 0.7619"], "trap": "The condition is losing, so use the Lose paths. The win probabilities 1/2 and 1/5 must be converted first."}
+]
+</script>
+
+<script id="quiz-logic">
+/* Pure scoring. Mirrors Canvas numeric answers: a ±0.0005 margin, and 999 must match exactly. */
+function gradeOne(q, raw) {
+  const text = raw == null ? "" : String(raw).trim();
+  if (text === "") return { status: "blank", earned: 0 };
+  if (q.type === "tf") {
+    const ok = text === q.answer;
+    return { status: ok ? "right" : "wrong", earned: ok ? q.pts : 0 };
+  }
+  if (!/^[+-]?(\d+\.?\d*|\.\d+)$/.test(text)) return { status: "invalid", earned: 0 };
+  const value = Number(text);
+  const ok = q.answer === 999 ? value === 999 : Math.abs(value - q.answer) <= 0.0005 + 1e-9;
+  return { status: ok ? "right" : "wrong", earned: ok ? q.pts : 0 };
+}
+function formatClock(ms) {
+  const total = Math.max(0, Math.ceil(ms / 1000));
+  return String(Math.floor(total / 60)).padStart(2, "0") + ":" + String(total % 60).padStart(2, "0");
+}
+</script>
+
+<script>
+(function () {
+  const QUESTIONS = JSON.parse(document.getElementById("quiz-data").textContent);
+  const LIMIT_MS = 50 * 60 * 1000;
+  const STORE = "comm190-q4-mock-b-v1";
+  const TOPICS = { sim: "4-1 Excel simulation", rules: "4-2 Probability trees and rules", cond: "4-3 Conditional probability and Bayes" };
+  const $ = (id) => document.getElementById(id);
+  const fresh = () => ({ answers: {}, endAt: null, submitted: false, usedMs: null, timedOut: false });
+
+  let state = fresh();
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORE) || "null");
+    if (saved && saved.answers) state = Object.assign(fresh(), saved);
+  } catch (e) { /* storage unavailable: run without saving */ }
+  const save = () => { try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) { /* ignored */ } };
+
+  function el(tag, cls, text) {
+    const n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+  function svgEl(tag, attrs, text) {
+    const n = document.createElementNS("http://www.w3.org/2000/svg", tag);
+    Object.entries(attrs).forEach(([k, v]) => n.setAttribute(k, v));
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function drawTree(tree) {
+    const svg = svgEl("svg", { viewBox: "0 0 460 180", class: "tree", role: "img", "aria-label": "Probability tree" });
+    svg.append(svgEl("text", { x: 452, y: 13, "text-anchor": "end", class: "head" }, "Joint probability"));
+    const ys = [[32, 72], [112, 152]], mids = [52, 132], rootY = 92;
+    tree.a.forEach((branch, i) => {
+      svg.append(svgEl("line", { x1: 8, y1: rootY, x2: 112, y2: mids[i] }));
+      svg.append(svgEl("text", { x: 60, y: (rootY + mids[i]) / 2 + (i === 0 ? -6 : 14), "text-anchor": "middle", class: "p" }, branch.p));
+      svg.append(svgEl("text", { x: 118, y: mids[i] + 4 }, branch.l));
+      branch.k.forEach((kid, j) => {
+        const y = ys[i][j];
+        svg.append(svgEl("line", { x1: 180, y1: mids[i], x2: 290, y2: y }));
+        svg.append(svgEl("text", { x: 235, y: (mids[i] + y) / 2 + (j === 0 ? -6 : 14), "text-anchor": "middle", class: "p" }, kid.p));
+        svg.append(svgEl("text", { x: 296, y: y + 4, class: kid.hit ? "hit" : "" }, kid.l));
+        svg.append(svgEl("text", { x: 452, y: y + 4, "text-anchor": "end", class: "j" + (kid.hit ? " hit" : "") }, kid.j));
+      });
+    });
+    const wrap = el("div", "tree-wrap");
+    wrap.append(svg);
+    return wrap;
+  }
+
+  function build() {
+    const paper = $("paper");
+    paper.textContent = "";
+    QUESTIONS.forEach((q) => {
+      const li = el("li", "q");
+      li.id = "item-" + q.id;
+
+      const mark = el("div", "mark");
+      mark.append(el("b", "", String(q.id)), el("small", "", q.pts + (q.pts === 1 ? " mark" : " marks")));
+
+      const body = el("div", "body");
+      body.append(el("p", "stem", (q.type === "tf" ? "True or False: " : "") + q.stem));
+      if (q.sheet) {
+        const wrap = el("div", "sheet-wrap");
+        const table = el("table", "sheet");
+        const head = table.insertRow();
+        ["Cell", "Formula"].forEach((h) => { const th = el("th", "", h); head.append(th); });
+        q.sheet.forEach((row) => {
+          const tr = table.insertRow();
+          const c = el("th", "", row[0]);
+          const f = el("td", "", row[1]);
+          tr.append(c, f);
+        });
+        wrap.append(table);
+        body.append(wrap);
+      }
+
+      const ans = el("div", "ans");
+      ans.id = "ans-" + q.id;
+      if (q.type === "tf") {
+        const fs = el("fieldset");
+        fs.append(el("legend", "", "Choose one"));
+        ["True", "False"].forEach((opt) => {
+          const lab = el("label", "tf");
+          const input = el("input");
+          input.type = "radio";
+          input.name = "q" + q.id;
+          input.id = "q" + q.id + "-" + opt.toLowerCase();
+          input.value = opt;
+          input.checked = state.answers[q.id] === opt;
+          input.addEventListener("change", () => setAnswer(q.id, opt));
+          lab.append(input, document.createTextNode(opt));
+          fs.append(lab);
+        });
+        ans.append(fs);
+      } else {
+        const lab = el("label", "lab", "Your answer");
+        lab.htmlFor = "q" + q.id;
+        const input = el("input");
+        input.type = "text";
+        input.id = "q" + q.id;
+        input.inputMode = "decimal";
+        input.autocomplete = "off";
+        input.value = state.answers[q.id] || "";
+        const hint = el("span", "hint", "Enter a decimal, such as 0.3333");
+        hint.hidden = true;
+        const check = () => { hint.hidden = gradeOne(q, input.value).status !== "invalid"; };
+        input.addEventListener("input", () => { setAnswer(q.id, input.value); check(); });
+        check();
+        ans.append(lab, input, hint);
+      }
+      li.append(mark, body, ans);
+      paper.append(li);
+    });
+  }
+
+  function setAnswer(id, value) {
+    state.answers[id] = value;
+    save();
+    updateCount();
+  }
+  function answeredCount() {
+    return QUESTIONS.filter((q) => String(state.answers[q.id] || "").trim() !== "").length;
+  }
+  function updateCount() {
+    if (!state.submitted) $("count").textContent = answeredCount() + " / " + QUESTIONS.length + " answered";
+  }
+
+  let ticker = null;
+  function stopTicker() { if (ticker) { clearInterval(ticker); ticker = null; } }
+  function tick() {
+    const left = state.endAt - Date.now();
+    $("clock").textContent = formatClock(left);
+    $("clock").classList.toggle("low", left <= 5 * 60 * 1000);
+    if (left <= 0) { state.timedOut = true; submit(); }
+  }
+  function startTimer() {
+    state.endAt = Date.now() + LIMIT_MS;
+    save();
+    runTimer();
+  }
+  function runTimer() {
+    $("start").hidden = true;
+    stopTicker();
+    ticker = setInterval(tick, 1000);
+    tick();
+  }
+
+  function submit() {
+    stopTicker();
+    $("confirm").hidden = true;
+    if (state.endAt) state.usedMs = Math.min(LIMIT_MS, LIMIT_MS - (state.endAt - Date.now()));
+    state.submitted = true;
+    save();
+    showResults(true);
+  }
+
+  function compareText(q, r, raw) {
+    if (r.status === "blank") return "You left this blank. The correct answer is " + q.key + ".";
+    if (r.status === "invalid") return "\u201c" + String(raw).trim() + "\u201d is not a decimal, so it could not be marked. The correct answer is " + q.key + ".";
+    return "You answered " + String(raw).trim() + ". The correct answer is " + q.key + ".";
+  }
+  function setOnlyMissed(on) {
+    $("paper").classList.toggle("only-missed", on);
+    const b = $("only-missed");
+    b.setAttribute("aria-pressed", String(on));
+    b.textContent = on ? "Show all questions" : "Show only missed questions";
+  }
+
+  function showResults(scroll) {
+    const graded = QUESTIONS.map((q) => ({ q, r: gradeOne(q, state.answers[q.id]) }));
+    const total = graded.reduce((s, g) => s + g.r.earned, 0);
+    const max = QUESTIONS.reduce((s, q) => s + q.pts, 0);
+
+    $("score-num").textContent = total + " / " + max;
+    const notes = [Math.round((total / max) * 100) + "%"];
+    if (state.timedOut) notes.push("Time ran out, so the quiz was submitted automatically");
+    else if (state.usedMs != null) notes.push("Time used " + formatClock(state.usedMs));
+    $("score-note").textContent = notes.join(" · ");
+
+    const rows = $("topic-rows");
+    rows.textContent = "";
+    Object.entries(TOPICS).forEach(([key, name]) => {
+      const inTopic = graded.filter((g) => g.q.topic === key);
+      const got = inTopic.reduce((s, g) => s + g.r.earned, 0);
+      const all = inTopic.reduce((s, g) => s + g.q.pts, 0);
+      const tr = rows.insertRow();
+      tr.insertCell().textContent = name;
+      tr.insertCell().textContent = got + " / " + all;
+    });
+
+    const jump = $("jump");
+    jump.textContent = "";
+    const missed = graded.filter((g) => g.r.status !== "right");
+    $("only-missed").hidden = !missed.length;
+    if (!missed.length) jump.append(el("span", "", "Perfect score. Nothing to review."));
+    missed.forEach((g) => {
+      const b = el("button", "", "Q" + g.q.id);
+      b.type = "button";
+      b.addEventListener("click", () => $("item-" + g.q.id).scrollIntoView({ behavior: "smooth", block: "start" }));
+      jump.append(b);
+    });
+
+    graded.forEach(({ q, r }) => {
+      const item = $("item-" + q.id);
+      item.querySelectorAll("input").forEach((i) => { i.disabled = true; });
+      const ans = $("ans-" + q.id);
+      const words = { right: ["ok", "Correct +" + q.pts], wrong: ["bad", "Incorrect 0 / " + q.pts], blank: ["none", "Blank 0 / " + q.pts], invalid: ["bad", "Invalid 0 / " + q.pts] }[r.status];
+      ans.append(el("span", "pill " + words[0], words[1]));
+      if (r.status !== "right") ans.append(el("span", "key", "Correct: " + q.key));
+
+      const missed = r.status !== "right";
+      item.classList.toggle("is-right", !missed);
+      const sol = el("details", "sol" + (missed ? " missed" : ""));
+      sol.open = missed;
+      sol.append(el("summary", "", missed ? "Explanation for this missed question" : "Show explanation"));
+      const inner = el("div", "sol-body");
+      if (missed) inner.append(el("p", "compare", compareText(q, r, state.answers[q.id])));
+      inner.append(el("div", "tag", TOPICS[q.topic]));
+      if (q.tree) inner.append(drawTree(q.tree));
+      const ol = el("ol");
+      q.steps.forEach((s) => ol.append(el("li", "", s)));
+      inner.append(ol);
+      if (q.trap) {
+        const p = el("p", "trap");
+        p.append(el("b", "", "Watch out: "), document.createTextNode(q.trap));
+        inner.append(p);
+      }
+      sol.append(inner);
+      item.append(sol);
+    });
+
+    $("results").hidden = false;
+    $("start").hidden = true;
+    $("clock").classList.remove("low");
+    $("clock").textContent = state.usedMs != null ? formatClock(state.usedMs) : "--:--";
+    $("count").textContent = "Submitted";
+    const btn = $("submit");
+    btn.textContent = "Clear and retry";
+    btn.classList.remove("primary");
+    if (scroll) {
+      $("results").focus({ preventScroll: true });
+      $("results").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  function reset() {
+    stopTicker();
+    state = fresh();
+    save();
+    $("results").hidden = true;
+    setOnlyMissed(false);
+    $("start").hidden = false;
+    $("clock").textContent = "50:00";
+    $("clock").classList.remove("low");
+    const btn = $("submit");
+    btn.textContent = "Submit and see answers";
+    btn.classList.add("primary");
+    build();
+    updateCount();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  $("only-missed").addEventListener("click", () => setOnlyMissed(!$("paper").classList.contains("only-missed")));
+  $("start").addEventListener("click", startTimer);
+  $("submit").addEventListener("click", () => {
+    if (state.submitted) { reset(); return; }
+    const left = QUESTIONS.length - answeredCount();
+    if (left > 0) {
+      $("confirm-msg").textContent = left + (left === 1 ? " question is" : " questions are") + " unanswered and will score 0.";
+      $("confirm").hidden = false;
+      return;
+    }
+    submit();
+  });
+  $("confirm-yes").addEventListener("click", submit);
+  $("confirm-no").addEventListener("click", () => { $("confirm").hidden = true; });
+
+  build();
+  updateCount();
+  if (state.submitted) showResults(false);
+  else if (state.endAt) runTimer();
+})();
+</script>
+</body>
+</html>
