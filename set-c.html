@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Third unofficial COMM 190 probability practice test: 16 new questions, 22 marks, 50-minute timer, with a solving guide and worked solutions for every missed question.">
+<meta property="og:title" content="COMM 190 Quiz 4 Mock Test C">
+<meta property="og:description" content="Third unofficial COMM 190 probability practice test: 16 new questions, 22 marks, 50-minute timer, with a solving guide and worked solutions for every missed question.">
+<style>:root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); } body { margin: 0; } img { max-width: 100%; } [hidden] { display: none !important; }</style>
+<title>COMM 190 Mock Test C</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap">
+<style>
+/* Layout concept: an exam answer sheet. Number and marks sit in the left margin, the question reads in the middle, the answer box sits in a right-hand column. */
+:root {
+  --bg: #fcfcfd; --surface: #f9f9fb; --chip: #f0f0f3; --line: #d9d9e0; --border: #cdced6; --focus: #8da4ef;
+  --muted: #60646c; --fg: #1c2024;
+  --accent: #3e63dd; --accent-hover: #3358d4; --accent-text: #3a5bc7; --accent-bg: #edf2fe; --on-accent: #fdfdfe;
+  --ok: #2a7e3b; --ok-bg: #e9f6e9; --ok-line: #94ce9a;
+  --bad: #d13415; --bad-bg: #feebe7; --bad-line: #f5a898;
+  --warn: #ab6400; --warn-bg: #fff7c2; --warn-line: #e9c162;
+  --serif: "Source Serif 4", Georgia, serif;
+  --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111113; --surface: #18191b; --chip: #212225; --line: #363a3f; --border: #43484e; --focus: #435db1;
+  --muted: #b0b4ba; --fg: #edeef0;
+  --accent: #3e63dd; --accent-hover: #5472e4; --accent-text: #9eb1ff; --accent-bg: #182449;
+  --ok: #71d083; --ok-bg: #1b2a1e; --ok-line: #366740;
+  --bad: #ff977d; --bad-bg: #391714; --bad-line: #853a2d;
+  --warn: #ffca16; --warn-bg: #302008; --warn-line: #714f19;
+  color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --bg: #111113; --surface: #18191b; --chip: #212225; --line: #363a3f; --border: #43484e; --focus: #435db1;
+  --muted: #b0b4ba; --fg: #edeef0;
+  --accent: #3e63dd; --accent-hover: #5472e4; --accent-text: #9eb1ff; --accent-bg: #182449;
+  --ok: #71d083; --ok-bg: #1b2a1e; --ok-line: #366740;
+  --bad: #ff977d; --bad-bg: #391714; --bad-line: #853a2d;
+  --warn: #ffca16; --warn-bg: #302008; --warn-line: #714f19;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 400 15px/1.65 var(--sans); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+.wrap { max-width: 860px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header.top { padding-block: 32px 22px; display: grid; gap: 12px; }
+.eyebrow { font: 600 12px/1.4 var(--mono); letter-spacing: .06em; color: var(--accent-text); }
+h1 { margin: 0; font: 700 clamp(26px, 5vw, 36px)/1.2 var(--serif); text-wrap: balance; }
+.spec { display: flex; flex-wrap: wrap; gap: 6px 8px; margin: 0; padding: 0; list-style: none; }
+.spec li { background: var(--chip); border-radius: 4px; padding: 2px 9px; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+.rules { margin: 0; color: var(--muted); max-width: 68ch; font-size: 14px; }
+.rules a { color: var(--accent-text); }
+.rules strong { color: var(--fg); font-weight: 500; }
+
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-block: 1px solid var(--line); }
+.bar-in { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding-block: 9px; }
+.clock { font: 600 21px/1 var(--mono); font-variant-numeric: tabular-nums; min-width: 4.2ch; }
+.clock.low { color: var(--bad); }
+.count { color: var(--muted); font-size: 13.5px; font-variant-numeric: tabular-nums; }
+.spacer { flex: 1 1 auto; }
+button { font: 500 14px/1 var(--sans); border-radius: 5px; padding: 9px 14px; cursor: pointer; border: 1px solid var(--border); background: var(--bg); color: var(--fg); }
+button:hover { border-color: var(--focus); }
+button.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+button.primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.confirm { border-top: 1px solid var(--line); background: var(--warn-bg); }
+.confirm-in { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding-block: 9px; font-size: 14px; }
+
+.results:focus { outline: none; }
+.results { padding-block: 24px; border-bottom: 1px solid var(--line); display: grid; gap: 16px; }
+.score { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+.score b { font: 700 44px/1 var(--serif); font-variant-numeric: tabular-nums; }
+.score span { color: var(--muted); }
+.res-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px 32px; }
+.res-grid > div { min-width: 0; }
+.res-grid h2, .ref h2 { margin: 0 0 6px; font: 600 16px/1.4 var(--serif); }
+table.topics { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+table.topics td { padding: 5px 0; border-top: 1px solid var(--line); }
+table.topics td:last-child { text-align: right; font-family: var(--mono); white-space: nowrap; }
+.jump { display: flex; flex-wrap: wrap; gap: 6px; }
+.jump button { padding: 6px 10px; font: 600 13px/1 var(--mono); color: var(--bad); border-color: var(--bad-line); background: var(--bad-bg); }
+.ref ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; font: 400 13.5px/1.55 var(--mono); }
+.ref li { overflow-wrap: anywhere; }
+
+.results { scroll-margin-top: 70px; }
+.guide { padding-block: 16px; border-bottom: 1px solid var(--line); }
+.guide summary { cursor: pointer; font: 600 19px/1.4 var(--serif); }
+.guide-note { margin: 8px 0; color: var(--muted); font-size: 14px; max-width: 68ch; }
+table.guide-t { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.5; }
+table.guide-t th, table.guide-t td { padding: 8px 12px 8px 0; border-top: 1px solid var(--line); text-align: left; vertical-align: top; }
+table.guide-t thead th { border-top: 0; font-size: 12.5px; font-weight: 500; color: var(--muted); }
+table.guide-t tbody th { width: 22%; font-weight: 600; }
+table.guide-t td:last-child { width: 31%; padding-right: 0; color: var(--muted); }
+.sol .point { margin: 0; font-size: 14.5px; }
+.sol .point b { color: var(--accent-text); font-weight: 600; }
+
+ol.paper { list-style: none; margin: 0; padding: 0; }
+.q { display: grid; grid-template-columns: 3.4rem minmax(0, 1fr) 10.5rem; gap: 6px 16px; padding-block: 20px; border-bottom: 1px solid var(--line); scroll-margin-top: 70px; }
+.mark { font-variant-numeric: tabular-nums; }
+.mark b { display: block; font: 700 21px/1.1 var(--serif); }
+.mark small { color: var(--muted); font-size: 12.5px; white-space: nowrap; }
+.stem { margin: 0; font: 400 17px/1.55 var(--serif); max-width: 62ch; }
+.body { display: grid; gap: 10px; min-width: 0; }
+.sheet-wrap { overflow-x: auto; }
+table.sheet { border-collapse: collapse; font: 400 13.5px/1.4 var(--mono); }
+table.sheet th, table.sheet td { border: 1px solid var(--border); padding: 4px 9px; text-align: left; white-space: nowrap; }
+table.sheet th { background: var(--chip); font-weight: 600; color: var(--muted); text-align: center; }
+.ans { display: grid; gap: 5px; align-content: start; }
+.ans label.lab { font-size: 12.5px; color: var(--muted); }
+.ans input[type="text"] { width: 100%; font: 600 16px/1.2 var(--mono); padding: 8px 9px; background: var(--bg); color: var(--fg); border: 1px solid var(--border); border-radius: 4px; font-variant-numeric: tabular-nums; }
+.ans input:disabled { opacity: 1; background: var(--chip); }
+.hint { font-size: 12.5px; color: var(--warn); }
+fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 4px; }
+fieldset legend { font-size: 12.5px; color: var(--muted); padding: 0; margin-bottom: 3px; }
+.tf { display: flex; align-items: center; gap: 7px; font-size: 15px; cursor: pointer; }
+.tf input { accent-color: var(--accent); width: 16px; height: 16px; margin: 0; }
+
+.pill { display: inline-block; width: fit-content; padding: 2px 9px; border-radius: 4px; border: 1px solid; font-size: 13px; font-weight: 500; }
+.pill.ok { color: var(--ok); background: var(--ok-bg); border-color: var(--ok-line); }
+.pill.bad { color: var(--bad); background: var(--bad-bg); border-color: var(--bad-line); }
+.pill.none { color: var(--warn); background: var(--warn-bg); border-color: var(--warn-line); }
+.key { font: 600 14px/1.4 var(--mono); }
+.sol { grid-column: 2 / -1; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 10px 14px; min-width: 0; margin-top: 6px; }
+.sol.missed { border-color: var(--bad-line); }
+.sol summary { cursor: pointer; font-size: 14px; font-weight: 500; color: var(--accent-text); }
+.sol.missed summary { color: var(--bad); }
+.sol-body { display: grid; gap: 8px; padding-top: 10px; min-width: 0; }
+.sol .compare { margin: 0; font-size: 14.5px; font-weight: 500; font-variant-numeric: tabular-nums; }
+button.filter { margin-top: 10px; padding: 7px 11px; font-size: 13px; }
+.only-missed .q.is-right { display: none; }
+.sol .tag { font: 600 12px/1.4 var(--mono); color: var(--accent-text); }
+.sol ol { margin: 0; padding-left: 1.25em; display: grid; gap: 3px; font-size: 14.5px; font-variant-numeric: tabular-nums; }
+.sol .trap { margin: 0; font-size: 14px; }
+.sol .trap b { color: var(--warn); font-weight: 500; }
+.tree-wrap { overflow-x: auto; }
+svg.tree { display: block; width: 100%; min-width: 400px; max-width: 520px; height: auto; }
+svg.tree line { stroke: var(--border); stroke-width: 1.25; }
+svg.tree text { fill: var(--fg); font: 400 12.5px var(--sans); }
+svg.tree text.p { font: 400 12px var(--mono); fill: var(--muted); paint-order: stroke; stroke: var(--surface); stroke-width: 4px; }
+svg.tree text.j { font: 400 12.5px var(--mono); }
+svg.tree text.head { font-size: 11.5px; fill: var(--muted); }
+svg.tree .hit { font-weight: 700; fill: var(--accent-text); }
+footer.foot { padding-block: 22px 40px; color: var(--muted); font-size: 13.5px; max-width: 68ch; }
+
+@media (max-width: 640px) {
+  .q { grid-template-columns: 3.4rem minmax(0, 1fr); }
+  .ans { grid-column: 2; max-width: 14rem; }
+  .sol { grid-column: 1 / -1; }
+  .q, .results { scroll-margin-top: 110px; }
+  table.guide-t thead { display: none; }
+  table.guide-t, table.guide-t tbody, table.guide-t tr, table.guide-t th, table.guide-t td { display: block; width: auto; }
+  table.guide-t tr { padding-block: 10px; border-top: 1px solid var(--line); }
+  table.guide-t tbody th, table.guide-t td, table.guide-t td:last-child { width: auto; border: 0; padding: 2px 0; }
+  table.guide-t td::before { content: attr(data-l); display: block; font-size: 12.5px; color: var(--muted); }
+}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">COMM 190 · MODULE 4-1 TO 4-3 · THIRD PRACTICE SET</div>
+    <h1>COMM 190 Quiz 4 Mock Test C</h1>
+    <ul class="spec">
+      <li>16 questions</li><li>22 marks</li><li>50 minutes</li><li>Probability only</li>
+    </ul>
+    <p class="rules"><strong>Rules:</strong> Round numeric answers to four decimal places. Enter <strong>999</strong> if there is not enough information. As on earlier quizzes, use only a calculator and scratch paper, with no Excel. Answers within ±0.0005 count as correct.</p>
+    <p class="rules">This is an unofficial study aid, not affiliated with UBC. The questions were written for practice and are not from the real Quiz 4. Marks per question are an estimate, and the real quiz may also cover the earlier LP modules.</p>
+    <p class="rules"><strong>Practice sets:</strong> This is Set C. <a href="./">Go to Set A</a> or <a href="set-b.html">Set B</a>.</p>
+  </header>
+</div>
+
+<div class="bar">
+  <div class="wrap bar-in">
+    <span class="clock" id="clock" role="timer" aria-label="Time remaining">50:00</span>
+    <button type="button" id="start">Start 50-minute timer</button>
+    <span class="count" id="count" aria-live="polite">0 / 16 answered</span>
+    <span class="spacer"></span>
+    <button type="button" class="primary" id="submit">Submit and see answers</button>
+  </div>
+  <div class="confirm" id="confirm" hidden>
+    <div class="wrap confirm-in">
+      <span id="confirm-msg"></span>
+      <button type="button" class="primary" id="confirm-yes">Submit anyway</button>
+      <button type="button" id="confirm-no">Keep working</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="results" id="results" hidden tabindex="-1" aria-label="Your results">
+    <div class="score"><b id="score-num"></b><span id="score-note"></span></div>
+    <div class="res-grid">
+      <div>
+        <h2>Score by topic</h2>
+        <table class="topics"><tbody id="topic-rows"></tbody></table>
+      </div>
+      <div>
+        <h2>Questions to review</h2>
+        <div class="jump" id="jump"></div>
+        <button type="button" id="only-missed" class="filter" aria-pressed="false">Show only missed questions</button>
+      </div>
+    </div>
+    <div class="ref">
+      <h2>Formula sheet</h2>
+      <ul>
+        <li>P(A ∪ B) = P(A) + P(B) − P(A ∩ B)</li>
+        <li>Independent: P(A ∩ B) = P(A)P(B), and P(A | B) = P(A)</li>
+        <li>Dependent: P(A ∩ B) ≠ P(A)P(B), and P(A | B) ≠ P(A)</li>
+        <li>Mutually exclusive: P(A ∩ B) = 0, and P(A | B) = 0</li>
+        <li>P(A | B) = P(A ∩ B) / P(B)</li>
+        <li>P(not A ∩ not B) = 1 − P(A ∪ B)</li>
+        <li>Bayes: P(A | B) = P(B | A)P(A) / [P(B | A)P(A) + P(B | not A)P(not A)]</li>
+        <li>RAND()*k is uniform on 0 to k, so P(interval) = interval length / k</li>
+      </ul>
+    </div>
+  </section>
+
+  <details class="guide" open>
+    <summary>Solving key points</summary>
+    <p class="guide-note">The method for each question type, with no answers from this set. Collapse this for exam conditions.</p>
+    <table class="guide-t">
+      <thead><tr><th scope="col">When you see</th><th scope="col">Do this</th><th scope="col">Common mistake</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">IF formula, one RAND() cell</th><td data-l="Do this">Write the interval that reaches the output. Probability = interval length / width of the range. a + RAND()*k runs from a to a + k.</td><td data-l="Common mistake">Multiplying the two tests. They read the same cell, so subtract.</td></tr>
+        <tr><th scope="row">IF formula, two RAND() cells</th><td data-l="Do this">Trace each path to the output. Multiply along a path, then add the paths.</td><td data-l="Common mistake">Forgetting the output can also appear on the outer false branch.</td></tr>
+        <tr><th scope="row">“Are they independent?”</th><td data-l="Do this">Find P(A ∩ B), using P(A) + P(B) − P(A ∪ B) if needed. Compare it with P(A)P(B). Equal means independent.</td><td data-l="Common mistake">Thinking that events which can happen together must be dependent.</td></tr>
+        <tr><th scope="row">Mutually exclusive</th><td data-l="Do this">P(A ∩ B) = 0, so P(A ∪ B) is the plain sum and P(A | B) = 0. With positive probabilities, these events are always dependent.</td><td data-l="Common mistake">Reversing it. Dependent events are not always mutually exclusive.</td></tr>
+        <tr><th scope="row">“At least one” or “neither”</th><td data-l="Do this">Use the complement: 1 − P(none). Neither = 1 − P(A ∪ B). Only if independent, neither = (1 − P(A))(1 − P(B)).</td><td data-l="Common mistake">Adding probabilities and counting the overlap twice.</td></tr>
+        <tr><th scope="row">Draws without replacement</th><td data-l="Do this">Draw the tree. The second branch uses one fewer ball. Multiply along paths and add the paths you need.</td><td data-l="Common mistake">Keeping the same denominator on the second draw.</td></tr>
+        <tr><th scope="row">“If” or “given”</th><td data-l="Do this">The condition is the denominator. Keep only the paths or table cells that satisfy it, then compute the part you want / all that remain.</td><td data-l="Common mistake">Stopping at the joint probability, or dividing by the wrong event.</td></tr>
+        <tr><th scope="row">Counts of people or items</th><td data-l="Do this">Build a 2 × 2 table. Total − neither = union, and P(A) + P(B) − union = both.</td><td data-l="Common mistake">Taking the numerator from the wrong row of the table.</td></tr>
+        <tr><th scope="row">Bayes: reversed question</th><td data-l="Do this">Draw the tree from the given rates. Answer = the one path you want / every path with the observed result.</td><td data-l="Common mistake">Giving the rate in the question, such as P(flag | fraud), when it asks for P(fraud | flag).</td></tr>
+        <tr><th scope="row">999 or not?</th><td data-l="Do this">Enter 999 only if nothing fixes P(A ∩ B). A union or a conditional would give it, so check for those first.</td><td data-l="Common mistake">Assuming independence just to get a number. “Dependent” alone gives no value.</td></tr>
+      </tbody>
+    </table>
+    <p class="guide-note">Keep full precision until the last step, then round to four decimal places.</p>
+  </details>
+
+  <ol class="paper" id="paper"></ol>
+  <footer class="foot">Scope follows the course announcement that Quiz 4 covers material up to Module 4-3. Your answers stay in your own browser and are never sent anywhere.</footer>
+</div>
+
+<script type="application/json" id="quiz-data">
+[
+{"id": 1, "pts": 1, "topic": "sim", "type": "num", "answer": 0.44, "key": "0.4400", "stem": "Cells A1 and A2 contain the formulas shown. After Excel recalculates, what is the probability that A2 displays \"M\"?", "sheet": [["A1", "=5+RAND()*10"], ["A2", "=IF(A1<8,\"L\",IF(A1<12.4,\"M\",\"H\"))"]], "point": "a + RAND()*k is uniform from a to a + k, so a probability is the interval length divided by k.", "steps": ["A1 = 5 + RAND()*10, so A1 is uniform between 5 and 15, a range of width 10.", "A2 displays M when A1 is not below 8 and is below 12.4, so 8 ≤ A1 < 12.4.", "P(M) = (12.4 − 8) / 10 = 4.4 / 10 = 0.44"], "trap": "The +5 moves the range but does not change its width. Divide by 10, not by 15."},
+{"id": 2, "pts": 1, "topic": "sim", "type": "num", "answer": 0.52, "key": "0.5200", "stem": "Cells A1 and A2 contain the formulas shown. After Excel recalculates, what is the probability that A2 displays \"Y\"?", "sheet": [["A1", "=RAND()"], ["A2", "=IF(A1>=0.3,IF(A1>=0.82,\"X\",\"Y\"),\"Z\")"]], "point": "When both tests read the same cell, combine them into one interval and subtract.", "steps": ["Y needs the outer test to pass, so A1 ≥ 0.3.", "Y also needs the inner test to fail, so A1 < 0.82.", "P(Y) = 0.82 − 0.3 = 0.52"], "trap": "Multiplying 0.7 × 0.82 is wrong, because both tests use the same cell and are not independent."},
+{"id": 3, "pts": 1, "topic": "sim", "type": "num", "answer": 0.29, "key": "0.2900", "stem": "Cells A1, B1 and C1 contain the formulas shown. After Excel recalculates, what is the probability that C1 displays \"X\"?", "sheet": [["A1", "=RAND()"], ["B1", "=RAND()"], ["C1", "=IF(A1<0.7,IF(B1<0.2,\"X\",\"Y\"),IF(B1<0.5,\"X\",\"Y\"))"]], "point": "When the tests read different cells, multiply along each path and then add the paths.", "steps": ["Path 1: A1 < 0.7 and B1 < 0.2 gives 0.7 × 0.2 = 0.14.", "Path 2: A1 ≥ 0.7 and B1 < 0.5 gives 0.3 × 0.5 = 0.15.", "P(X) = 0.14 + 0.15 = 0.29"], "trap": "X appears on two paths. Stopping at 0.14 misses the false branch of the outer IF."},
+{"id": 4, "pts": 1, "topic": "rules", "type": "tf", "answer": "True", "key": "True", "stem": "If P(A) > 0, P(B) > 0 and P(A | B) = P(A), then A and B cannot be mutually exclusive.", "point": "Independent events with positive probabilities always overlap, so they cannot be mutually exclusive.", "steps": ["P(A | B) = P(A) means that A and B are independent.", "Then P(A ∩ B) = P(A)P(B), which is above 0 because both probabilities are positive.", "Mutually exclusive events need P(A ∩ B) = 0, so the statement is True."], "trap": "Mutually exclusive does not mean independent. Those two properties cannot both hold when the probabilities are positive."},
+{"id": 5, "pts": 1, "topic": "rules", "type": "tf", "answer": "False", "key": "False", "stem": "J and K are events with P(J) = 0.5, P(K) = 0.6 and P(J ∪ K) = 0.85. Then J and K are independent.", "point": "Get the joint probability from the union, then compare it with the product.", "steps": ["P(J ∩ K) = 0.5 + 0.6 − 0.85 = 0.25.", "P(J)P(K) = 0.5 × 0.6 = 0.3.", "0.25 ≠ 0.3, so J and K are dependent, and the statement is False."], "trap": "The events overlap, but overlapping does not settle it. Only the comparison with the product does."},
+{"id": 6, "pts": 1, "topic": "rules", "type": "num", "answer": 0.4167, "key": "0.4167", "stem": "You roll two standard six-sided dice. What is the probability that the sum is 7 or at least one die shows a 6?", "point": "For an OR question, add the two events and subtract the outcomes they share.", "steps": ["Sum of 7: 6 outcomes out of 36.", "At least one 6: 11 outcomes out of 36.", "Both: (1, 6) and (6, 1), which is 2 outcomes.", "P = (6 + 11 − 2) / 36 = 15/36 = 0.4167"], "trap": "Answering 17/36 = 0.4722 counts (1, 6) and (6, 1) twice."},
+{"id": 7, "pts": 2, "topic": "rules", "type": "num", "answer": 0.4, "key": "0.4000", "stem": "A and B are independent events with P(A) = 0.3. The probability that neither event occurs is 0.42. What is P(B)?", "point": "For independent events, P(neither) = (1 − P(A))(1 − P(B)).", "steps": ["P(neither) = (1 − 0.3)(1 − P(B)) = 0.7(1 − P(B)).", "0.42 = 0.7(1 − P(B)), so 1 − P(B) = 0.6.", "P(B) = 0.4", "Check: 0.7 × 0.6 = 0.42."], "trap": "Answering 0.6 stops one step early. That value is P(not B)."},
+{"id": 8, "pts": 1, "topic": "rules", "type": "num", "answer": 0.37, "key": "0.3700", "stem": "C and D are mutually exclusive events with P(C) = 0.38 and P(D) = 0.25. What is the probability that neither event occurs?", "point": "Mutually exclusive means the union is the plain sum, and neither is 1 minus that sum.", "steps": ["P(C ∩ D) = 0, so P(C ∪ D) = 0.38 + 0.25 = 0.63.", "P(neither) = 1 − 0.63 = 0.37"], "trap": "(1 − 0.38)(1 − 0.25) = 0.465 is the independence formula, which does not apply here."},
+{"id": 9, "pts": 1, "topic": "rules", "type": "num", "answer": 999, "key": "999", "stem": "E and F are dependent events with P(E) = 0.5 and P(F) = 0.4. What is P(E ∩ F)?", "point": "The word \"dependent\" gives no number. It only rules out P(E)P(F).", "steps": ["Dependent means P(E ∩ F) ≠ P(E)P(F) = 0.2.", "Many values are still possible, such as 0, 0.1 or 0.3.", "There is not enough information, so enter 999."], "trap": "0.2 assumes independence, which the question rules out. 0 assumes mutual exclusivity, which is only one kind of dependence."},
+{"id": 10, "pts": 1, "topic": "cond", "type": "num", "answer": 0.35, "key": "0.3500", "stem": "U and V are independent events with P(U) = 0.35 and P(V) = 0.6. What is P(U | not V)?", "point": "If U and V are independent, then U and not V are independent too.", "steps": ["P(U ∩ not V) = P(U)P(not V) = 0.35 × 0.4 = 0.14.", "P(U | not V) = 0.14 / 0.4 = 0.35", "Knowing that V did not occur does not change the probability of U."], "trap": "0.14 is the joint probability. A conditional probability still needs dividing by P(not V)."},
+{"id": 11, "pts": 1, "topic": "rules", "type": "num", "answer": 0.6667, "key": "0.6667", "stem": "A box contains 4 red balls and 6 black balls. Two balls are drawn in sequence without replacement. What is the probability that at least one ball is red?", "tree": {"a": [{"l": "Red", "p": "4/10", "k": [{"l": "Red", "p": "3/9", "j": "12/90", "hit": true}, {"l": "Black", "p": "6/9", "j": "24/90", "hit": true}]}, {"l": "Black", "p": "6/10", "k": [{"l": "Red", "p": "4/9", "j": "24/90", "hit": true}, {"l": "Black", "p": "5/9", "j": "30/90"}]}]}, "point": "\"At least one\" is usually fastest as 1 minus the probability of none.", "steps": ["The complement of \"at least one red\" is \"both black\".", "P(both black) = (6/10)(5/9) = 30/90.", "P(at least one red) = 1 − 30/90 = 60/90 = 0.6667"], "trap": "(6/10)(6/10) would be drawing with replacement. After one black ball is drawn, 5 of the remaining 9 are black."},
+{"id": 12, "pts": 2, "topic": "cond", "type": "num", "answer": 0.2, "key": "0.2000", "stem": "A box contains 4 red balls and 6 black balls. Two balls are drawn in sequence without replacement. If at least one ball is red, what is the probability that both balls are red?", "tree": {"a": [{"l": "Red", "p": "4/10", "k": [{"l": "Red", "p": "3/9", "j": "12/90", "hit": true}, {"l": "Black", "p": "6/9", "j": "24/90"}]}, {"l": "Black", "p": "6/10", "k": [{"l": "Red", "p": "4/9", "j": "24/90"}, {"l": "Black", "p": "5/9", "j": "30/90"}]}]}, "point": "The condition becomes the denominator. Keep only the tree paths that satisfy it.", "steps": ["\"At least one red\" keeps three paths: 12/90 + 24/90 + 24/90 = 60/90.", "Both red is the one path 12/90.", "P(both red | at least one red) = (12/90) / (60/90) = 12/60 = 0.2"], "trap": "3/9 = 0.3333 assumes you know the first ball was red. Here you only know that one of the two balls was red."},
+{"id": 13, "pts": 2, "topic": "cond", "type": "num", "answer": 0.3448, "key": "0.3448", "stem": "G and H are events with P(G) = 0.4, P(H | G) = 0.5 and P(G ∪ H) = 0.78. What is P(G | H)?", "point": "Multiply a conditional by its condition to get the joint, then use the union to find the missing probability.", "steps": ["P(G ∩ H) = P(H | G)P(G) = 0.5 × 0.4 = 0.2.", "P(H) = P(G ∪ H) − P(G) + P(G ∩ H) = 0.78 − 0.4 + 0.2 = 0.58.", "P(G | H) = 0.2 / 0.58 = 0.3448"], "trap": "P(G | H) and P(H | G) have the same numerator but different denominators. This question divides by P(H), not P(G)."},
+{"id": 14, "pts": 2, "topic": "cond", "type": "num", "answer": 0.4375, "key": "0.4375", "stem": "A store surveyed 800 customers. Of these, 500 use its app, 320 belong to its loyalty program, and 120 do neither. If a randomly selected customer belongs to the loyalty program, what is the probability that the customer uses the app?", "point": "Start from \"neither\": total minus neither gives the union, and the union gives the overlap.", "steps": ["Customers using at least one = 800 − 120 = 680.", "Customers using both = 500 + 320 − 680 = 140.", "P(app | loyalty) = 140 / 320 = 0.4375"], "trap": "140/500 = 0.28 is the reverse condition, and 140/800 = 0.175 is the joint probability. The word after \"if\" sets the denominator."},
+{"id": 15, "pts": 2, "topic": "cond", "type": "num", "answer": 0.0508, "key": "0.0508", "stem": "Of a firm's job applicants, 20% are qualified. A screening test passes 85% of qualified applicants and 30% of unqualified applicants. If an applicant fails the test, what is the probability that the applicant is qualified?", "tree": {"a": [{"l": "Qualified", "p": "0.20", "k": [{"l": "Pass", "p": "0.85", "j": "0.17"}, {"l": "Fail", "p": "0.15", "j": "0.03", "hit": true}]}, {"l": "Unqualified", "p": "0.80", "k": [{"l": "Pass", "p": "0.30", "j": "0.24"}, {"l": "Fail", "p": "0.70", "j": "0.56"}]}]}, "point": "Read which outcome was observed. Here it is Fail, so convert the pass rates to fail rates first.", "steps": ["P(fail) = 0.20 × 0.15 + 0.80 × 0.70 = 0.03 + 0.56 = 0.59.", "P(qualified and fail) = 0.03.", "P(qualified | fail) = 0.03 / 0.59 = 0.0508"], "trap": "0.15 is P(fail | qualified), which is the reverse of the question."},
+{"id": 16, "pts": 2, "topic": "cond", "type": "num", "answer": 0.3125, "key": "0.3125", "stem": "A retailer buys 50% of its stock from Supplier A, 30% from Supplier B and 20% from Supplier C. The defect rates are 2% for A, 4% for B and 5% for C. If a randomly selected item is defective, what is the probability that it came from Supplier C?", "point": "Bayes works the same with three branches: the one path you want, divided by every path that matches the condition.", "steps": ["A and defective: 0.5 × 0.02 = 0.010.", "B and defective: 0.3 × 0.04 = 0.012.", "C and defective: 0.2 × 0.05 = 0.010.", "P(defective) = 0.010 + 0.012 + 0.010 = 0.032.", "P(C | defective) = 0.010 / 0.032 = 0.3125"], "trap": "The denominator needs all three suppliers. Using only two branches, or answering 0.05, misses the total probability of a defect."}
+]
+</script>
+
+<script id="quiz-logic">
+/* Pure scoring. Mirrors Canvas numeric answers: a ±0.0005 margin, and 999 must match exactly. */
+function gradeOne(q, raw) {
+  const text = raw == null ? "" : String(raw).trim();
+  if (text === "") return { status: "blank", earned: 0 };
+  if (q.type === "tf") {
+    const ok = text === q.answer;
+    return { status: ok ? "right" : "wrong", earned: ok ? q.pts : 0 };
+  }
+  if (!/^[+-]?(\d+\.?\d*|\.\d+)$/.test(text)) return { status: "invalid", earned: 0 };
+  const value = Number(text);
+  const ok = q.answer === 999 ? value === 999 : Math.abs(value - q.answer) <= 0.0005 + 1e-9;
+  return { status: ok ? "right" : "wrong", earned: ok ? q.pts : 0 };
+}
+function formatClock(ms) {
+  const total = Math.max(0, Math.ceil(ms / 1000));
+  return String(Math.floor(total / 60)).padStart(2, "0") + ":" + String(total % 60).padStart(2, "0");
+}
+</script>
+
+<script>
+(function () {
+  const QUESTIONS = JSON.parse(document.getElementById("quiz-data").textContent);
+  const LIMIT_MS = 50 * 60 * 1000;
+  const STORE = "comm190-q4-mock-c-v1";
+  const TOPICS = { sim: "4-1 Excel simulation", rules: "4-2 Probability trees and rules", cond: "4-3 Conditional probability and Bayes" };
+  const $ = (id) => document.getElementById(id);
+  const fresh = () => ({ answers: {}, endAt: null, submitted: false, usedMs: null, timedOut: false });
+
+  let state = fresh();
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORE) || "null");
+    if (saved && saved.answers) state = Object.assign(fresh(), saved);
+  } catch (e) { /* storage unavailable: run without saving */ }
+  const save = () => { try { localStorage.setItem(STORE, JSON.stringify(state)); } catch (e) { /* ignored */ } };
+
+  function el(tag, cls, text) {
+    const n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+  function svgEl(tag, attrs, text) {
+    const n = document.createElementNS("http://www.w3.org/2000/svg", tag);
+    Object.entries(attrs).forEach(([k, v]) => n.setAttribute(k, v));
+    if (text != null) n.textContent = text;
+    return n;
+  }
+
+  function drawTree(tree) {
+    const svg = svgEl("svg", { viewBox: "0 0 460 180", class: "tree", role: "img", "aria-label": "Probability tree" });
+    svg.append(svgEl("text", { x: 452, y: 13, "text-anchor": "end", class: "head" }, "Joint probability"));
+    const ys = [[32, 72], [112, 152]], mids = [52, 132], rootY = 92;
+    tree.a.forEach((branch, i) => {
+      svg.append(svgEl("line", { x1: 8, y1: rootY, x2: 112, y2: mids[i] }));
+      svg.append(svgEl("text", { x: 60, y: (rootY + mids[i]) / 2 + (i === 0 ? -6 : 14), "text-anchor": "middle", class: "p" }, branch.p));
+      svg.append(svgEl("text", { x: 118, y: mids[i] + 4 }, branch.l));
+      branch.k.forEach((kid, j) => {
+        const y = ys[i][j];
+        svg.append(svgEl("line", { x1: 180, y1: mids[i], x2: 290, y2: y }));
+        svg.append(svgEl("text", { x: 235, y: (mids[i] + y) / 2 + (j === 0 ? -6 : 14), "text-anchor": "middle", class: "p" }, kid.p));
+        svg.append(svgEl("text", { x: 296, y: y + 4, class: kid.hit ? "hit" : "" }, kid.l));
+        svg.append(svgEl("text", { x: 452, y: y + 4, "text-anchor": "end", class: "j" + (kid.hit ? " hit" : "") }, kid.j));
+      });
+    });
+    const wrap = el("div", "tree-wrap");
+    wrap.append(svg);
+    return wrap;
+  }
+
+  function build() {
+    const paper = $("paper");
+    paper.textContent = "";
+    QUESTIONS.forEach((q) => {
+      const li = el("li", "q");
+      li.id = "item-" + q.id;
+
+      const mark = el("div", "mark");
+      mark.append(el("b", "", String(q.id)), el("small", "", q.pts + (q.pts === 1 ? " mark" : " marks")));
+
+      const body = el("div", "body");
+      body.append(el("p", "stem", (q.type === "tf" ? "True or False: " : "") + q.stem));
+      if (q.sheet) {
+        const wrap = el("div", "sheet-wrap");
+        const table = el("table", "sheet");
+        const head = table.insertRow();
+        ["Cell", "Formula"].forEach((h) => { const th = el("th", "", h); head.append(th); });
+        q.sheet.forEach((row) => {
+          const tr = table.insertRow();
+          const c = el("th", "", row[0]);
+          const f = el("td", "", row[1]);
+          tr.append(c, f);
+        });
+        wrap.append(table);
+        body.append(wrap);
+      }
+
+      const ans = el("div", "ans");
+      ans.id = "ans-" + q.id;
+      if (q.type === "tf") {
+        const fs = el("fieldset");
+        fs.append(el("legend", "", "Choose one"));
+        ["True", "False"].forEach((opt) => {
+          const lab = el("label", "tf");
+          const input = el("input");
+          input.type = "radio";
+          input.name = "q" + q.id;
+          input.id = "q" + q.id + "-" + opt.toLowerCase();
+          input.value = opt;
+          input.checked = state.answers[q.id] === opt;
+          input.addEventListener("change", () => setAnswer(q.id, opt));
+          lab.append(input, document.createTextNode(opt));
+          fs.append(lab);
+        });
+        ans.append(fs);
+      } else {
+        const lab = el("label", "lab", "Your answer");
+        lab.htmlFor = "q" + q.id;
+        const input = el("input");
+        input.type = "text";
+        input.id = "q" + q.id;
+        input.inputMode = "decimal";
+        input.autocomplete = "off";
+        input.value = state.answers[q.id] || "";
+        const hint = el("span", "hint", "Enter a decimal, such as 0.3333");
+        hint.hidden = true;
+        const check = () => { hint.hidden = gradeOne(q, input.value).status !== "invalid"; };
+        input.addEventListener("input", () => { setAnswer(q.id, input.value); check(); });
+        check();
+        ans.append(lab, input, hint);
+      }
+      li.append(mark, body, ans);
+      paper.append(li);
+    });
+  }
+
+  function setAnswer(id, value) {
+    state.answers[id] = value;
+    save();
+    updateCount();
+  }
+  function answeredCount() {
+    return QUESTIONS.filter((q) => String(state.answers[q.id] || "").trim() !== "").length;
+  }
+  function updateCount() {
+    if (!state.submitted) $("count").textContent = answeredCount() + " / " + QUESTIONS.length + " answered";
+  }
+
+  let ticker = null;
+  function stopTicker() { if (ticker) { clearInterval(ticker); ticker = null; } }
+  function tick() {
+    const left = state.endAt - Date.now();
+    $("clock").textContent = formatClock(left);
+    $("clock").classList.toggle("low", left <= 5 * 60 * 1000);
+    if (left <= 0) { state.timedOut = true; submit(); }
+  }
+  function startTimer() {
+    state.endAt = Date.now() + LIMIT_MS;
+    save();
+    runTimer();
+  }
+  function runTimer() {
+    $("start").hidden = true;
+    stopTicker();
+    ticker = setInterval(tick, 1000);
+    tick();
+  }
+
+  function submit() {
+    stopTicker();
+    $("confirm").hidden = true;
+    if (state.endAt) state.usedMs = Math.min(LIMIT_MS, LIMIT_MS - (state.endAt - Date.now()));
+    state.submitted = true;
+    save();
+    showResults(true);
+  }
+
+  function compareText(q, r, raw) {
+    if (r.status === "blank") return "You left this blank. The correct answer is " + q.key + ".";
+    if (r.status === "invalid") return "\u201c" + String(raw).trim() + "\u201d is not a decimal, so it could not be marked. The correct answer is " + q.key + ".";
+    return "You answered " + String(raw).trim() + ". The correct answer is " + q.key + ".";
+  }
+  function setOnlyMissed(on) {
+    $("paper").classList.toggle("only-missed", on);
+    const b = $("only-missed");
+    b.setAttribute("aria-pressed", String(on));
+    b.textContent = on ? "Show all questions" : "Show only missed questions";
+  }
+
+  function showResults(scroll) {
+    const graded = QUESTIONS.map((q) => ({ q, r: gradeOne(q, state.answers[q.id]) }));
+    const total = graded.reduce((s, g) => s + g.r.earned, 0);
+    const max = QUESTIONS.reduce((s, q) => s + q.pts, 0);
+
+    $("score-num").textContent = total + " / " + max;
+    const notes = [Math.round((total / max) * 100) + "%"];
+    if (state.timedOut) notes.push("Time ran out, so the quiz was submitted automatically");
+    else if (state.usedMs != null) notes.push("Time used " + formatClock(state.usedMs));
+    $("score-note").textContent = notes.join(" · ");
+
+    const rows = $("topic-rows");
+    rows.textContent = "";
+    Object.entries(TOPICS).forEach(([key, name]) => {
+      const inTopic = graded.filter((g) => g.q.topic === key);
+      const got = inTopic.reduce((s, g) => s + g.r.earned, 0);
+      const all = inTopic.reduce((s, g) => s + g.q.pts, 0);
+      const tr = rows.insertRow();
+      tr.insertCell().textContent = name;
+      tr.insertCell().textContent = got + " / " + all;
+    });
+
+    const jump = $("jump");
+    jump.textContent = "";
+    const missed = graded.filter((g) => g.r.status !== "right");
+    $("only-missed").hidden = !missed.length;
+    if (!missed.length) jump.append(el("span", "", "Perfect score. Nothing to review."));
+    missed.forEach((g) => {
+      const b = el("button", "", "Q" + g.q.id);
+      b.type = "button";
+      b.addEventListener("click", () => $("item-" + g.q.id).scrollIntoView({ behavior: "smooth", block: "start" }));
+      jump.append(b);
+    });
+
+    graded.forEach(({ q, r }) => {
+      const item = $("item-" + q.id);
+      item.querySelectorAll("input").forEach((i) => { i.disabled = true; });
+      const ans = $("ans-" + q.id);
+      const words = { right: ["ok", "Correct +" + q.pts], wrong: ["bad", "Incorrect 0 / " + q.pts], blank: ["none", "Blank 0 / " + q.pts], invalid: ["bad", "Invalid 0 / " + q.pts] }[r.status];
+      ans.append(el("span", "pill " + words[0], words[1]));
+      if (r.status !== "right") ans.append(el("span", "key", "Correct: " + q.key));
+
+      const missed = r.status !== "right";
+      item.classList.toggle("is-right", !missed);
+      const sol = el("details", "sol" + (missed ? " missed" : ""));
+      sol.open = missed;
+      sol.append(el("summary", "", missed ? "Explanation for this missed question" : "Show explanation"));
+      const inner = el("div", "sol-body");
+      if (missed) inner.append(el("p", "compare", compareText(q, r, state.answers[q.id])));
+      inner.append(el("div", "tag", TOPICS[q.topic]));
+      if (q.point) {
+        const p = el("p", "point");
+        p.append(el("b", "", "Key point: "), document.createTextNode(q.point));
+        inner.append(p);
+      }
+      if (q.tree) inner.append(drawTree(q.tree));
+      const ol = el("ol");
+      q.steps.forEach((s) => ol.append(el("li", "", s)));
+      inner.append(ol);
+      if (q.trap) {
+        const p = el("p", "trap");
+        p.append(el("b", "", "Watch out: "), document.createTextNode(q.trap));
+        inner.append(p);
+      }
+      sol.append(inner);
+      item.append(sol);
+    });
+
+    $("results").hidden = false;
+    $("start").hidden = true;
+    $("clock").classList.remove("low");
+    $("clock").textContent = state.usedMs != null ? formatClock(state.usedMs) : "--:--";
+    $("count").textContent = "Submitted";
+    const btn = $("submit");
+    btn.textContent = "Clear and retry";
+    btn.classList.remove("primary");
+    if (scroll) {
+      $("results").focus({ preventScroll: true });
+      $("results").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  function reset() {
+    stopTicker();
+    state = fresh();
+    save();
+    $("results").hidden = true;
+    setOnlyMissed(false);
+    $("start").hidden = false;
+    $("clock").textContent = "50:00";
+    $("clock").classList.remove("low");
+    const btn = $("submit");
+    btn.textContent = "Submit and see answers";
+    btn.classList.add("primary");
+    build();
+    updateCount();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  $("only-missed").addEventListener("click", () => setOnlyMissed(!$("paper").classList.contains("only-missed")));
+  $("start").addEventListener("click", startTimer);
+  $("submit").addEventListener("click", () => {
+    if (state.submitted) { reset(); return; }
+    const left = QUESTIONS.length - answeredCount();
+    if (left > 0) {
+      $("confirm-msg").textContent = left + (left === 1 ? " question is" : " questions are") + " unanswered and will score 0.";
+      $("confirm").hidden = false;
+      return;
+    }
+    submit();
+  });
+  $("confirm-yes").addEventListener("click", submit);
+  $("confirm-no").addEventListener("click", () => { $("confirm").hidden = true; });
+
+  build();
+  updateCount();
+  if (state.submitted) showResults(false);
+  else if (state.endAt) runTimer();
+})();
+</script>
+</body>
+</html>

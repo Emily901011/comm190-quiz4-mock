@@ -6,6 +6,8 @@ An unofficial practice test for the probability unit of COMM 190, covering mater
 
 **Set B:** https://emily901011.github.io/comm190-quiz4-mock/set-b.html
 
+**Set C:** https://emily901011.github.io/comm190-quiz4-mock/set-c.html (includes a solving guide)
+
 - Each set has 16 questions, 22 marks, and an optional 50-minute timer
 - Automatic marking, with a worked solution for every missed question
 - Answers stay in your browser and are never sent anywhere
