@@ -71,7 +71,7 @@ button:focus-visible, input:focus-visible { outline: 2px solid var(--focus); out
 .confirm-in { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding-block: 9px; font-size: 14px; }
 
 .results:focus { outline: none; }
-.results { padding-block: 24px; border-bottom: 1px solid var(--line); display: grid; gap: 16px; }
+.results { scroll-margin-top: 70px; padding-block: 24px; border-bottom: 1px solid var(--line); display: grid; gap: 16px; }
 .score { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
 .score b { font: 700 44px/1 var(--serif); font-variant-numeric: tabular-nums; }
 .score span { color: var(--muted); }
@@ -138,6 +138,7 @@ footer.foot { padding-block: 22px 40px; color: var(--muted); font-size: 13.5px; 
   .q { grid-template-columns: 3.4rem minmax(0, 1fr); }
   .ans { grid-column: 2; max-width: 14rem; }
   .sol { grid-column: 1 / -1; }
+  .q, .results { scroll-margin-top: 110px; }
 }
 </style>
 
